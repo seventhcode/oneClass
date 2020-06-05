@@ -445,43 +445,22 @@
 .zwyMusic{
 	position: relative;
 }
-.zwyMusic::after{
-	content: '♩';
+.zwyMusic::after,.zwyMusic::before{
 	position: absolute;
 	left: -10%;
 	bottom: -30%;
 	color: #000000;
-	animation:zwyMusicAfter 2.5s linear infinite ; 
 	opacity: 0;
 }
-@keyframes zwyMusicAfter{
-	0% {
-	    transform:translateY(0) translateX(0) scale(0);
-	    opacity: 0;
-	}
-	1% {
-	    transform:translateY(0) translateX(0) scale(.6);
-	    opacity: 1;
-	}
-	50% {
-	    transform: translateX(-40rpx) translateY(-50rpx) scale(1);
-	    opacity: 1;
-	}
-	100% {
-	    transform: translateX(-50rpx) translateY(-100rpx);
-	    opacity: 0;
-	}
+.zwyMusic::after{
+	content: '♩';
+	animation:zwyMusic 2.5s 1.25s linear infinite ;
 }
 .zwyMusic::before{
 	content: '♫';
-	position: absolute;
-	color: #000000;
-	left: -10%;
-	bottom: -30%;
-	animation:zwyMusicAfter 2.5s 1.25s linear infinite ; 
-	opacity: 0;
+	animation:zwyMusic 2.5s linear infinite ;
 }
-@keyframes zwyMusicAfter{
+@keyframes zwyMusic{
 	0% {
 	    transform:translateY(0) translateX(0) scale(0);
 	    opacity: 0;
