@@ -1,0 +1,384 @@
+/*
+	在App.vue全局引入common文件夹下的zwyCss.css
+	为你想要效果的view添加class  ||  hover-class
+*/
+
+.zwyHeight {
+	position: relative;
+	overflow: hidden;
+}
+
+.zwyHeight::before {
+	content: '';
+	position: absolute;
+	background-color: rgb(255, 255, 255, 0.7);
+	width: 140%;
+	height: 40rpx;
+	left: 140%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	transform: rotateZ(45deg);
+	animation: isLeft 5s 2.3s infinite;
+}
+
+@keyframes isLeft {
+	0% {
+		left: -140%;
+	}
+
+	12% {
+		left: 140%;
+	}
+
+	100% {
+		left: 140%;
+	}
+}
+
+
+/* 
+	<view wx:for="{{3}}" style="animation-delay:{{index+'s'}}" class="zwyChevron" key="{{index}}" ></view>
+*/
+.zwyChevron {
+	position: absolute;
+	width: 14px;
+	height: 4px;
+	opacity: 0;
+	transform: scale3d(0.5, 0.5, 0.5);
+	animation: move 3s ease-out infinite;
+}
+
+.zwyChevron:before,
+.zwyChevron:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	margin: auto;
+	height: 100%;
+	width: 51%;
+	background: #fff;
+}
+
+.zwyChevron:before {
+	left: 0;
+	transform: skew(0deg, 30deg);
+}
+
+.zwyChevron:after {
+	right: 0;
+	width: 50%;
+	transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+	25% {
+		opacity: 1;
+	}
+
+	33% {
+		opacity: 1;
+		transform: translateY(30px);
+	}
+
+	67% {
+		opacity: 1;
+		transform: translateY(40px);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+	}
+}
+
+
+@keyframes shockwave {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15);
+		/* box-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.6), inset 0 0 0.0625rem rgba(255, 255, 255, 0.6); */
+		opacity: 1;
+	}
+
+	95% {
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0);
+		/* box-shadow: 0 0 3.125rem rgba(255, 255, 255, 0.6), inset 0 0 1.875rem rgba(255, 255, 255, 0.6); */
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(2.25);
+		transform: scale(2.25);
+		opacity: 0;
+	}
+}
+
+@keyframes shockwaveWhite {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		/* box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15); */
+		box-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.6), inset 0 0 0.0625rem rgba(255, 255, 255, 0.6);
+		opacity: 1;
+	}
+
+	95% {
+		/* box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0); */
+		box-shadow: 0 0 3.125rem rgba(255, 255, 255, 0.6), inset 0 0 1.875rem rgba(255, 255, 255, 0.6);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(2.25);
+		transform: scale(2.25);
+		opacity: 0;
+	}
+}
+
+.zwyHotWhite {
+	position: relative;
+}
+
+.zwyHotWhite::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 50%;
+	-webkit-animation: shockwaveWhite 3s 0.5s ease-out infinite;
+	animation: shockwaveWhite 3s 0.5s ease-out infinite;
+}
+
+.zwyHotWhite::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 50%;
+	-webkit-animation: shockwaveWhite 3s 0.65s ease-out infinite;
+	animation: shockwaveWhite 3s 0.65s ease-out infinite;
+}
+
+.zwyHot {
+	position: relative;
+}
+
+.zwyHot::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 50%;
+	-webkit-animation: shockwave 3s 0.5s ease-out infinite;
+	animation: shockwave 3s 0.5s ease-out infinite;
+}
+
+.zwyHot::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 50%;
+	-webkit-animation: shockwave 3s 0.65s ease-out infinite;
+	animation: shockwave 3s 0.65s ease-out infinite;
+}
+
+@keyframes zwyHover1 {
+	0% {
+		transform: scale(1);
+	}
+
+	33% {
+		transform: scale(0.9);
+	}
+
+	66% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.zwyHover1 {
+	animation: zwyHover1 .3s infinite !important;
+}
+
+.zwyShake {
+	transform-origin: center bottom;
+	animation: zwyShake 2s 0.5s ease-out infinite;
+}
+
+@keyframes zwyShake {
+	0% {
+		transform: rotate(0deg);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+	}
+
+	10% {
+		transform: rotate(-12deg);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+	}
+
+	20% {
+		transform: rotate(12deg);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+	}
+
+	28% {
+		transform: rotate(-10deg);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+	}
+
+	36% {
+		transform: rotate(10deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	42% {
+		transform: rotate(-8deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	48% {
+		transform: rotate(8deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	52% {
+		transform: rotate(-4deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	56% {
+		transform: rotate(4deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	60% {
+		transform: rotate(0deg);
+		transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+	}
+
+	100% {
+		transform: rotate(0deg);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+	}
+}
+
+.zwyHover2 {
+	border-radius: 100%;
+	z-index: 999;
+	position: relative;
+}
+
+.zwyHover2::before,
+.zwyHover2::after {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 140%;
+	height: 100%;
+	left: -20%;
+	z-index: -1000;
+	transition: all ease-in-out 0.5s;
+	background-repeat: no-repeat;
+}
+
+.zwyHover2::before {
+	top: -55%;
+	background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+	background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+	animation: topBubbles ease-in-out 0.75s infinite;
+	display: block;
+}
+
+.zwyHover2::after {
+	bottom: -55%;
+	background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+	background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+	display: block;
+	animation: bottomBubbles ease-in-out 0.75s infinite;
+}
+
+
+@keyframes topBubbles {
+	0% {
+		background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+	}
+
+	50% {
+		background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+	}
+
+	100% {
+		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+@keyframes bottomBubbles {
+	0% {
+		background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+	}
+
+	50% {
+		background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+	}
+
+	100% {
+		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+@keyframes zwyHover3 {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	33% {
+		transform: scale(1, 1.2);
+	}
+
+	66% {
+		transform: scale(1.2, 1);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+.zwyHover3 {
+	animation: zwyHover3 .3s infinite !important;
+}
+
+.zwyFly {
+	animation: zwyFly 2s infinite alternate !important;
+}
+
+@keyframes zwyFly {
+	100% {
+		transform: translateY(12%);
+	}
+}
+
+.zwyHover4{
+	border-bottom: 6rpx #F6BE3C solid;
+}
+.zwyHover4:hover{
+	margin-top: 6rpx;
+	border-bottom: 0rpx #F6BE3C solid;
+}
