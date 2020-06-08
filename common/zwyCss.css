@@ -448,7 +448,7 @@
 
 .zwyPortrait::after{
 	transform: scale(1.1);
-	animation:zwyPortrait 0.7s linear infinite ;
+	animation:zwyPortrait 0.8s linear infinite ;
 }
 
 @keyframes zwyPortrait{
@@ -478,5 +478,5 @@
 }
 
 .zwyBeat {
-	animation: zwyBeat 0.7s linear infinite;
+	animation: zwyBeat 0.8s linear infinite;
 }

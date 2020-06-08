@@ -3,6 +3,20 @@
 		<view>在App.vue全局引入common文件夹下的zwyCss.css</view>
 		<view>为你想要效果的view添加class  ||  hover-class</view>
 		<view class="card">
+			<view class="cardItem">
+				<view class="tips">旋转</view>
+				<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
+					<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
+				</view>
+				<view class="className">zwyRotate zwyMusic</view>
+			</view>
+			<view class="cardItem">
+				<view class="tips">直播头像</view>
+				<view class="zwyPortrait" style="--color:#ff0081;">
+					<view class="bubble zwyBeat">气泡</view>
+				</view>
+				<view class="className">zwyPortrait zwyBeat</view>
+			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">直播</view>
 				<view style="width: 50rpx;height: 50rpx;display: flex;align-items: center;justify-content: center;">
@@ -12,7 +26,6 @@
 			</view>
 			<view class="cardItem">
 				<view class="tips">流光效果</view>
-				<!--添加 class ='zwyHeight' -->
 				<view class="item1 zwyHeight">流光</view>
 				<view class="className">zwyHeight</view>
 			</view>
@@ -25,6 +38,7 @@
 			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">添加黑色波纹</view>
+				<!-- color:rgba(0, 0, 0, 0.15); 黑色    color:rgba(255, 255, 255, 0.6); 白色 -->
 				<view class="circle zwyHot" style="--color:rgba(0, 0, 0, 0.15);"></view>
 				<view class="className">zwyHot</view>
 			</view>
@@ -61,20 +75,6 @@
 				<view class="tips">浮动效果</view>
 				<view class="bubble zwyFly">气泡</view>
 				<view class="className">zwyFly</view>
-			</view>
-			<view class="cardItem">
-				<view class="tips">旋转</view>
-				<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
-					<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
-				</view>
-				<view class="className">zwyRotate zwyMusic</view>
-			</view>
-			<view class="cardItem">
-				<view class="tips">直播头像</view>
-				<view class="zwyPortrait" style="--color:#ff0081;">
-					<view class="bubble zwyBeat">气泡</view>
-				</view>
-				<view class="className">zwyPortrait zwyBeat</view>
 			</view>
 		</view>
 	</view>
