@@ -11,14 +11,14 @@
 .zwyHeight::before {
 	content: '';
 	position: absolute;
-	background-color: rgb(255, 255, 255, 0.7);
+	background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
 	width: 140%;
-	height: 40rpx;
+	height: 80rpx;
 	left: 140%;
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	transform: rotateZ(45deg);
+	transform: rotateZ(-45deg);
 	animation: isLeft 5s 2.3s infinite;
 }
 
@@ -97,13 +97,13 @@
 	0% {
 		-webkit-transform: scale(1);
 		transform: scale(1);
-		box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 0 2px var(--color), inset 0 0 1px var(--color);
 		/* box-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.6), inset 0 0 0.0625rem rgba(255, 255, 255, 0.6); */
 		opacity: 1;
 	}
 
 	95% {
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0);
+		box-shadow: 0 0 50px var(--color), inset 0 0 30px var(--color);
 		/* box-shadow: 0 0 3.125rem rgba(255, 255, 255, 0.6), inset 0 0 1.875rem rgba(255, 255, 255, 0.6); */
 		opacity: 0;
 	}
@@ -115,58 +115,9 @@
 	}
 }
 
-@keyframes shockwaveWhite {
-	0% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		/* box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15); */
-		box-shadow: 0 0 0.125rem rgba(255, 255, 255, 0.6), inset 0 0 0.0625rem rgba(255, 255, 255, 0.6);
-		opacity: 1;
-	}
-
-	95% {
-		/* box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0); */
-		box-shadow: 0 0 3.125rem rgba(255, 255, 255, 0.6), inset 0 0 1.875rem rgba(255, 255, 255, 0.6);
-		opacity: 0;
-	}
-
-	100% {
-		-webkit-transform: scale(2.25);
-		transform: scale(2.25);
-		opacity: 0;
-	}
-}
-
-.zwyHotWhite {
-	position: relative;
-}
-
-.zwyHotWhite::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	border-radius: 50%;
-	-webkit-animation: shockwaveWhite 3s 0.5s ease-out infinite;
-	animation: shockwaveWhite 3s 0.5s ease-out infinite;
-}
-
-.zwyHotWhite::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	border-radius: 50%;
-	-webkit-animation: shockwaveWhite 3s 0.65s ease-out infinite;
-	animation: shockwaveWhite 3s 0.65s ease-out infinite;
-}
-
 .zwyHot {
 	position: relative;
+	--color:rgba(0, 0, 0, 0.15);
 }
 
 .zwyHot::before {
@@ -212,7 +163,8 @@
 }
 
 .zwyHover1 {
-	animation: zwyHover1 .3s infinite !important;
+	--count:infinite;
+	animation: zwyHover1 .3s var(--count) !important;
 }
 
 .zwyShake {
@@ -281,6 +233,7 @@
 	border-radius: 100%;
 	z-index: 999;
 	position: relative;
+	--color:#ff0081;
 }
 
 .zwyHover2::before,
@@ -298,7 +251,7 @@
 
 .zwyHover2::before {
 	top: -55%;
-	background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+	background-image: radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--color) 20%, transparent 30%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--color) 15%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%);
 	background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 	animation: topBubbles ease-in-out 0.75s infinite;
 	display: block;
@@ -306,7 +259,7 @@
 
 .zwyHover2::after {
 	bottom: -55%;
-	background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+	background-image: radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--color) 15%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%);
 	background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 	display: block;
 	animation: bottomBubbles ease-in-out 0.75s infinite;
@@ -405,22 +358,21 @@
 }
 
 .zwyLive{
-	width: 20%;
+	width: 10%;
 	height: 50%;
 	position: relative;
-	background-color: white;
+	--color:white;
+	background-color: var(--color);
 	transform-origin: bottom;
-	animation: zwyLive 0.7s alternate infinite ease-in-out;
+	animation: zwyLive 0.6s 0.2s infinite ease-in-out;
 }
 .zwyLive::after{
-	right: 120%;
-	animation: zwyLive 0.7s alternate infinite ease-in-out;
-	animation-delay: .2s;
+	right: 200%;
+	animation: zwyLive 0.6s 0.4s infinite ease-in-out;
 }
 .zwyLive::before{
-	left: 120%;
-	animation: zwyLive 0.7s alternate infinite ease-in-out;
-	animation-delay: .3s;
+	left: 200%;
+	animation: zwyLive 0.6s 0s infinite ease-in-out;
 }
 .zwyLive::after,.zwyLive::before{
 	width: 100%;
@@ -428,22 +380,21 @@
 	content: '';
 	position: absolute;
 	bottom: 0;
-	background-color: white;
+	background-color: var(--color);
 	transform-origin: bottom;
 }
 @keyframes zwyLive {
-	0% {
-	    transform: scaleY(0.6);
+	0%,100% {
+		transform:scaleY(1);
 	}
-	40% {
-	    transform:scaleY(1.2);
-	}
-	100% {
+	50% {
 	    transform: scaleY(0.6);
 	}
 }
 .zwyMusic{
 	position: relative;
+	--contentBefore:'♫';
+	--contentAfter:'♩';
 }
 .zwyMusic::after,.zwyMusic::before{
 	position: absolute;
@@ -453,11 +404,11 @@
 	opacity: 0;
 }
 .zwyMusic::after{
-	content: '♩';
+	content: var(--contentAfter);
 	animation:zwyMusic 2.5s 1.25s linear infinite ;
 }
 .zwyMusic::before{
-	content: '♫';
+	content: var(--contentBefore);
 	animation:zwyMusic 2.5s linear infinite ;
 }
 @keyframes zwyMusic{

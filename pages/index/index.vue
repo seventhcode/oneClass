@@ -6,7 +6,7 @@
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">直播</view>
 				<view style="width: 50rpx;height: 50rpx;display: flex;align-items: center;justify-content: center;">
-					<view class="zwyLive"></view>
+					<view class="zwyLive" style="--color:white;"></view>
 				</view>
 				<view class="className">zwyLive</view>
 			</view>
@@ -25,17 +25,18 @@
 			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">添加黑色波纹</view>
-				<view class="circle zwyHot"></view>
+				<view class="circle zwyHot" style="--color:rgba(0, 0, 0, 0.15);"></view>
 				<view class="className">zwyHot</view>
 			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">添加白色波纹</view>
-				<view class="circle zwyHotWhite"></view>
-				<view class="className">zwyHotWhite</view>
+				<view class="circle zwyHot" style="--color:rgba(255, 255, 255, 0.6);"></view>
+				<view class="className">zwyHot</view>
 			</view>
 			<view class="cardItem">
 				<view class="tips">缩小点击效果</view>
-				<view class="btn zwyHover1">按钮</view>
+				<!-- count:Number || infinite -->
+				<view class="btn" hover-class="zwyHover1" style="--count:1;">按钮</view>
 				<view class="className">zwyHover1</view>
 			</view>
 			<view class="cardItem">
@@ -46,7 +47,7 @@
 			</view>
 			<view class="cardItem">
 				<view class="tips">气泡点击效果</view>
-				<view class="btn zwyHover2">按钮</view>
+				<view class="btn zwyHover2" style="--color:#ff0081;">按钮</view>
 				<view class="className">zwyHover2</view>
 			</view>
 			<view class="cardItem">
@@ -61,7 +62,7 @@
 			</view>
 			<view class="cardItem">
 				<view class="tips">旋转</view>
-				<view class="zwyMusic">
+				<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
 					<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
 				</view>
 				<view class="className">zwyRotate zwyMusic</view>
