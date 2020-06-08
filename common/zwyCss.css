@@ -143,15 +143,9 @@
 	0% {
 		transform: scale(1);
 	}
-
-	33% {
+	50% {
 		transform: scale(0.9);
 	}
-
-	66% {
-		transform: scale(1.1);
-	}
-
 	100% {
 		transform: scale(1);
 	}
@@ -229,6 +223,7 @@
 	z-index: 999;
 	position: relative;
 	--color:#ff0081;
+	--count:infinite;
 }
 
 .zwyHover2::before,
@@ -247,30 +242,32 @@
 .zwyHover2::before {
 	top: -55%;
 	background-image: radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--color) 20%, transparent 30%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--color) 15%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%);
-	background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-	animation: topBubbles ease-in-out 0.75s infinite;
+	background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	animation: topBubbles ease-in-out 0.75s var(--count);
 	display: block;
 }
 
 .zwyHover2::after {
 	bottom: -55%;
 	background-image: radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--color) 15%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%), radial-gradient(circle, var(--color) 20%, transparent 20%);
-	background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+	background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
 	display: block;
-	animation: bottomBubbles ease-in-out 0.75s infinite;
+	animation: bottomBubbles ease-in-out 0.75s var(--count);
 }
 
 
 @keyframes topBubbles {
 	0% {
 		background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+		background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 	}
 
 	50% {
 		background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+		background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 	}
 
-	100% {
+	100%{
 		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
 		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
 	}
@@ -279,13 +276,15 @@
 @keyframes bottomBubbles {
 	0% {
 		background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+		background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 	}
 
 	50% {
 		background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+		background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 	}
 
-	100% {
+	100%{
 		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
 		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
 	}
@@ -310,7 +309,8 @@
 }
 
 .zwyHover3 {
-	animation: zwyHover3 .3s infinite !important;
+	--count:infinite;
+	animation: zwyHover3 .3s var(--count) !important;
 }
 
 .zwyFly {
@@ -424,4 +424,59 @@
 	    transform: translateX(-50rpx) translateY(-100rpx) scale(1);
 	    opacity: 0;
 	}
+}
+
+
+.zwyPortrait{
+	position: relative;
+	--color:#ff0081;
+}
+.zwyPortrait::after,.zwyPortrait::before{
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	box-sizing: border-box;
+	border: 1rpx solid var(--color);
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.zwyPortrait::after{
+	transform: scale(1.1);
+	animation:zwyPortrait 0.7s linear infinite ;
+}
+
+@keyframes zwyPortrait{
+	0%,100%{
+	    transform: scale(1);
+	    opacity: 0;
+	}
+	1% {
+	    transform: scale(1);
+		opacity: 1;
+	}
+	95% {
+	    transform: scale(1.3);
+	    opacity: 0;
+	}
+}
+@keyframes zwyBeat {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.zwyBeat {
+	animation: zwyBeat 0.7s linear infinite;
 }
