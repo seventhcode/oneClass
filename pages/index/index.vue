@@ -4,6 +4,16 @@
 		<view>为你想要效果的view添加class  ||  hover-class</view>
 		<view class="card">
 			<view class="cardItem">
+				<view class="tips">波浪背景</view>
+				<view>🛒</view>
+				<view class="className">zwyWave</view>
+			</view>
+			<view class="cardItem">
+				<view class="tips">流光效果2</view>
+				<view class="item1 zwyHeightSec">流光2</view>
+				<view class="className">zwyHeightSec</view>
+			</view>
+			<view class="cardItem">
 				<view class="tips">旋转</view>
 				<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
 					<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
