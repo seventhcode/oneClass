@@ -3,10 +3,13 @@
 		<view>在App.vue全局引入common文件夹下的zwyCss.css</view>
 		<view>为你想要效果的view添加class  ||  hover-class</view>
 		<view class="card">
-			<view class="cardItem">
-				<view class="tips">波浪背景</view>
-				<view>🛒</view>
-				<view class="className">zwyWave</view>
+			<view class="cardItem" style="background-color:#4CD964;">
+				<view class="tips">购物车(待完善)</view>
+				<view style="position: relative;width: 60rpx;height: 60rpx;border-radius: 50%;background-color:rgba(0, 0, 0, 0.6);display: flex;align-items: center;justify-content: center;">
+					<view class="zwyDrop"></view>
+					<image class="zwyCart" src="../../static/icon_cart.png"></image>
+				</view>
+				<view class="className">zwyDrop zwyCart</view>
 			</view>
 			<view class="cardItem">
 				<view class="tips">流光效果2</view>
@@ -14,11 +17,11 @@
 				<view class="className">zwyHeightSec</view>
 			</view>
 			<view class="cardItem">
-				<view class="tips">旋转</view>
-				<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
-					<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
-				</view>
-				<view class="className">zwyRotate zwyMusic</view>
+					<view class="tips">旋转</view>
+					<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
+						<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
+					</view>
+					<view class="className">zwyRotate zwyMusic</view>
 			</view>
 			<view class="cardItem">
 				<view class="tips">直播头像</view>
