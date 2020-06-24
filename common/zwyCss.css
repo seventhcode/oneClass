@@ -3,10 +3,6 @@
 	为你想要效果的view添加class  ||  hover-class
 */
 
-*{
-	-webkit-backface-visibility: hidden;
-}
-
 @keyframes zwyCart{
 	7%{
 		transform: scale(1, 1);
