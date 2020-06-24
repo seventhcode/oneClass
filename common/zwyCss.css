@@ -62,11 +62,12 @@
 		border-radius: 50%;
 		transform: scaleX(1);
 		background-color: #fff;
+
 	}
 	31%{
 		opacity: 0;
 	}
-	32%{
+	33%{
 		top: -30%;
 		opacity: 0;
 	}
@@ -106,6 +107,8 @@
 	width: 10rpx;
 	height: 10rpx;
 	position: absolute;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -547,6 +550,10 @@
 	animation:zwyMusic 2.5s linear infinite ;
 }
 @keyframes zwyMusic{
+	0%{
+		transform: translateX(0) translateY(0) scale(0);
+		opacity: 0;
+	}
 	5% {
 	    transform:translateY(0) translateX(0) scale(.6);
 	    opacity: 1;
@@ -568,7 +575,7 @@
 		perspective: 1000;
 	}
 	100%{
-		transform: translateX(-50rpx) translateY(-100rpx) scale(1);
+		transform: translateX(0) translateY(0) scale(0);
 		opacity: 0;
 	}
 }
