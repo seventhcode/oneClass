@@ -3,6 +3,12 @@
 		<view>在App.vue全局引入common文件夹下的zwyCss.css</view>
 		<view>为你想要效果的view添加class  ||  hover-class</view>
 		<view class="card">
+			<view class="cardItem">
+				<view class="tips">消失</view>
+				<!-- count:Number || infinite; -->
+				<view class="btn zwyHide" style="--bgColor:#ffffff;--btnColor:#1AAD19;--count:infinite">消失</view>
+				<view class="className">zwyHide</view>
+			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">购物车(待完善)</view>
 				<view style="position: relative;width: 60rpx;height: 60rpx;border-radius: 50%;background-color:rgba(0, 0, 0, 0.6);display: flex;align-items: center;justify-content: center;">
@@ -13,12 +19,12 @@
 			</view>
 			<view class="cardItem">
 				<view class="tips">流光效果2</view>
-				<view class="item1 zwyHeightSec">流光2</view>
+				<view class="btn zwyHeightSec">流光2</view>
 				<view class="className">zwyHeightSec</view>
 			</view>
-			<view class="cardItem">
+			<view class="cardItem" style="background-color:#4CD964;">
 					<view class="tips">旋转</view>
-					<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';">
+					<view class="zwyMusic" style="--contentBefore:'♫';--contentAfter:'♩';--zIndex:999;--color:#ffffff">
 						<view class="bubble zwyRotate" style="animation-duration: 10s;">气泡</view>
 					</view>
 					<view class="className">zwyRotate zwyMusic</view>
@@ -39,7 +45,7 @@
 			</view>
 			<view class="cardItem">
 				<view class="tips">流光效果</view>
-				<view class="item1 zwyHeight">流光</view>
+				<view class="btn zwyHeight">流光</view>
 				<view class="className">zwyHeight</view>
 			</view>
 			<view class="cardItem">
@@ -52,12 +58,12 @@
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">添加黑色波纹</view>
 				<!-- color:rgba(0, 0, 0, 0.15); 黑色    color:rgba(255, 255, 255, 0.6); 白色 -->
-				<view class="circle zwyHot" style="--color:rgba(0, 0, 0, 0.15);"></view>
+				<view class="bubble zwyHot" style="--color:rgba(0, 0, 0, 0.15);"></view>
 				<view class="className">zwyHot</view>
 			</view>
 			<view class="cardItem" style="background-color:#4CD964;">
 				<view class="tips">添加白色波纹</view>
-				<view class="circle zwyHot" style="--color:rgba(255, 255, 255, 0.6);"></view>
+				<view class="bubble zwyHot" style="--color:rgba(255, 255, 255, 0.6);"></view>
 				<view class="className">zwyHot</view>
 			</view>
 			<view class="cardItem">
@@ -125,21 +131,6 @@
 	.className{
 		padding-top: 10rpx;
 	}
-	.circle{
-		position: relative;
-		box-shadow:0px 6rpx 10rpx 0rpx rgba(106, 168, 194, 0.6);
-		background:linear-gradient(-39deg, rgba(43, 161, 250, 1), rgba(156, 210, 252, 1));
-		border-radius:50%;
-		width: 50rpx;
-		height: 50rpx;
-	}
-	.btn{
-		padding: 0 20rpx;
-		height: 40rpx;
-		border-radius: 40rpx;
-		color: white;
-		background-color: #007AFF;
-	}
 	.chevronBox{
 		width: 80rpx;
 		height: 80rpx;
@@ -147,12 +138,6 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-	}
-	.item1{
-		background-color: #007AFF;
-		padding: 0 20rpx;
-		border-radius: 10rpx;
-		color: white;
 	}
 	.cardItem{
 		width: 50%;

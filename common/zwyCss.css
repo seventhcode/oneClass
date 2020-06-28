@@ -1,7 +1,44 @@
+.btn{
+		padding: 0 20rpx;
+		height: 40rpx;
+		border-radius: 40rpx;
+		color: white;
+		background-color: #007AFF;
+}
+.bubble{
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	background-color: #007AFF;
+	color: white;
+	text-align: center;
+	line-height: 60rpx;
+}
+
 /*
 	在App.vue全局引入common文件夹下的zwyCss.css
 	为你想要效果的view添加class  ||  hover-class
 */
+
+        .zwyHide {
+			background: linear-gradient(270deg,var(--btnColor), var(--btnColor), var(--bgColor), var(--bgColor));
+			background-size: 300% 300%;
+			background-position: 99% 50%;
+			--bgColor:white;
+			--btnColor:#1AAD19;
+			color: var(--bgColor);
+			animation: zwyHide 1s var(--count) ease both;
+			--count:infinite;
+        }
+		@keyframes zwyHide{
+			0%{
+				background-position: 99% 50%;
+			}
+			100%{
+				background-position: 1% 50%;
+			}
+		}
+
 
 @keyframes zwyCart{
 	7%{
@@ -361,7 +398,6 @@
 }
 
 .zwyHover2 {
-	border-radius: 100%;
 	z-index: 999;
 	position: relative;
 	--color:#ff0081;
@@ -532,12 +568,16 @@
 	position: relative;
 	--contentBefore:'♫';
 	--contentAfter:'♩';
+	--color:#000000;
+	--zIndex:9999;
+	z-index: var(--zIndex);
 }
 .zwyMusic::after,.zwyMusic::before{
 	position: absolute;
 	left: -10%;
 	bottom: -30%;
-	color: #000000;
+	color: var(--color);
+	z-index: calc(var(--zIndex) - 1);
 	opacity: 0;
 	transform:translateY(0) translateX(0) scale(0);
 }
