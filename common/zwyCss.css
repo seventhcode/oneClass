@@ -1,3 +1,10 @@
+/*
+	在App.vue全局引入common文件夹下的zwyCss.css
+	为你想要效果的view添加class  ||  hover-class
+	插件地址: https://ext.dcloud.net.cn/plugin?id=1973
+*/
+
+
 .btn{
 		padding: 0 20rpx;
 		height: 40rpx;
@@ -15,10 +22,6 @@
 	line-height: 60rpx;
 }
 
-/*
-	在App.vue全局引入common文件夹下的zwyCss.css
-	为你想要效果的view添加class  ||  hover-class
-*/
 
         .zwyHide {
 			background: linear-gradient(270deg,var(--btnColor), var(--btnColor), var(--bgColor), var(--bgColor));

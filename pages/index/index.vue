@@ -1,7 +1,7 @@
 <template>
 	<view class="container999">
 		<view>在App.vue全局引入common文件夹下的zwyCss.css</view>
-		<view>为你想要效果的view添加class  ||  hover-class</view>
+		<view>为你想要效果的view添加class  ||  hover-class(设置--count:1)</view>
 		<view class="card">
 			<view class="cardItem">
 				<view class="tips">消失</view>
