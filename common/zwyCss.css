@@ -2,6 +2,8 @@
 	在App.vue全局引入common文件夹下的zwyCss.css
 	为你想要效果的view添加class  ||  hover-class
 	插件地址: https://ext.dcloud.net.cn/plugin?id=1973
+	当前版本 1.0.8
+	(style中设置--count:1 || infinite)即播放次数为1
 */
 
 
