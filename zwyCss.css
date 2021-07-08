@@ -1,153 +1,316 @@
 /*
 	在App.vue全局引入common文件夹下的zwyCss.css
 	为你想要效果的view添加class  ||  hover-class
-	插件地址: https://ext.dcloud.net.cn/plugin?id=1973
-	当前版本 1.0.8
-	(style中设置--count:1 || infinite)即播放次数为1
+	插件地址: 
+	https://ext.dcloud.net.cn/plugin?id=1973
+	
 */
 
-
-.btn{
-		padding: 0 20rpx;
-		height: 40rpx;
-		border-radius: 40rpx;
-		color: white;
-		background-color: #007AFF;
+.zwyDot {
+	animation: zwyDot 4s infinite linear;
+	opacity: 1;
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 20%;
+	height: 100%;
+	left: 0;
+	border-radius: 100%;
+	--left:10%;
+	--right:390%;
+	--bg:#000000;
 }
-.bubble{
-	width: 60rpx;
-	height: 60rpx;
-	border-radius: 50%;
-	background-color: #007AFF;
-	color: white;
-	text-align: center;
-	line-height: 60rpx;
+.zwyDot::after {
+	content: '';
+	position: absolute;
+	left: calc(50% + 4px);
+	top: -4px;
+	height: 4px;
+	width: 4px;
+	background: var(--bg);
+	border-radius: 4px;
+	border: 4px solid  var(--bg);
+	box-shadow: 0 0 7px  var(--bg),
+				0 0 4px var(--bg);
+}
+@keyframes zwyDot {
+	0% {transform: translateX(var(--left)) rotate(0);}
+	25%{transform: translateX(var(--right)) rotate(0);}
+	50% {transform: translateX(var(--right)) rotate(180deg);}
+	75% {transform: translateX(var(--left)) rotate(180deg);}
+	100% {transform: translateX(var(--left)) rotate(360deg);}
 }
 
 
-        .zwyHide {
-			background: linear-gradient(270deg,var(--btnColor), var(--btnColor), var(--bgColor), var(--bgColor));
-			background-size: 300% 300%;
-			background-position: 99% 50%;
-			--bgColor:white;
-			--btnColor:#1AAD19;
-			color: var(--bgColor);
-			animation: zwyHide 1s var(--count) ease both;
-			--count:infinite;
-        }
-		@keyframes zwyHide{
-			0%{
-				background-position: 99% 50%;
-			}
-			100%{
-				background-position: 1% 50%;
-			}
-		}
+
+@keyframes zwyMidSkewShow {
+	from {
+		transform: scale(0) rotateY(0);
+	}
+	to {
+		transform: scale(1) rotateY(360deg);
+	}
+}
+.zwyMidSkewShow {
+	animation: zwyMidSkewShow var(--speed) var(--count);
+	transform-origin: center;
+}
 
 
-@keyframes zwyCart{
-	7%{
+
+@keyframes zwyHeightThree {
+	0% {
+		transform: translate(0,
+			0) translate(-50%, -50%);
+	}
+
+	35% {
+		transform: translate(50%,
+			0) translate(-50%, -50%);
+	}
+
+	50% {
+		transform: translate(50%,
+			50%) translate(-50%, -50%);
+	}
+
+	85% {
+		transform: translate(0,
+			50%) translate(-50%, -50%);
+	}
+
+	100% {
+		transform: translate(0,
+			0) translate(-50%, -50%);
+	}
+
+}
+
+.zwyHeightThree::before {
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle at center, var(--heightColor) 0%, transparent 20%);
+	animation: zwyHeightThree var(--speed) linear infinite;
+}
+
+.zwyHeightThree::after {
+	opacity: 0.85;
+	background: inherit;
+	margin: 2px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: var(--borderRadius);
+}
+
+.zwyHeightThree::before,
+.zwyHeightThree::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.zwyHeightThree {
+	position: relative;
+	overflow: hidden;
+	--borderRadius:100px;
+	--heightColor:#fff;
+	--speed:5s;
+	border-radius: var(--borderRadius);
+	z-index: 2;
+}
+
+.zwyHand {
+	position: absolute;
+	left: 30px;
+	top: 40%;
+	animation: zwyHand .3s infinite alternate;
+}
+
+@keyframes zwyHand {
+	from {
+		transform: translate(0, 0);
+	}
+
+	to {
+		transform: translate(-10px, -10px);
+	}
+}
+
+.zwyRotateAndScale {
+	transform-origin: left bottom;
+	animation: zwyRotateAndScale 1.2s .3s ease-in-out infinite;
+}
+
+@keyframes zwyRotateAndScale {
+	0% {
+		transform: rotate(0) scale(1);
+
+	}
+
+	30% {
+		transform: rotate(0) scale(1);
+	}
+
+	45% {
+		transform: rotate(-10deg) scale(.8);
+	}
+
+	65% {
+		transform: rotate(-20deg) scale(.8);
+	}
+
+	100% {
+		transform: rotate(0) scale(1);
+	}
+}
+
+.zwyHide {
+	background: linear-gradient(270deg, var(--btnColor), var(--btnColor), var(--bgColor), var(--bgColor));
+	background-size: 300% 300%;
+	background-position: 99% 50%;
+	--bgColor: white;
+	--btnColor: #1AAD19;
+	color: var(--bgColor);
+	animation: zwyHide 1s var(--count) ease both;
+	--count: infinite;
+}
+
+@keyframes zwyHide {
+	0% {
+		background-position: 99% 50%;
+	}
+
+	100% {
+		background-position: 1% 50%;
+	}
+}
+
+
+@keyframes zwyCart {
+	7% {
 		transform: scale(1, 1);
 	}
-	10%{
+
+	10% {
 		transform: scale(1, 0.8);
 	}
-	13%{
+
+	13% {
 		transform: scale(1, 1);
 	}
-	37%{
+
+	37% {
 		transform: scale(1, 1);
 	}
-	40%{
+
+	40% {
 		transform: scale(1, 0.8);
 	}
-	43%{
+
+	43% {
 		transform: scale(1, 1);
 	}
 }
 
-.zwyCart{
+.zwyCart {
 	transform-origin: bottom;
-	width: 30rpx;
-	height: 30rpx;
+	width: 30px;
+	height: 30px;
 	position: relative;
 	animation: zwyCart 3s infinite ease;
 }
 
-@keyframes zwyDrop{
+@keyframes zwyDrop {
 	0% {
 		top: -30%;
 		border-radius: 50%;
 		background-color: #fff;
 	}
-	3%{
+
+	3% {
 		top: 0;
 		border-radius: 50%;
 		background-color: #fff;
 	}
+
 	6% {
 		top: 30%;
-		height: 5rpx;
-		border-radius: 10rpx 10rpx 5rpx 5rpx;
+		height: 5px;
+		border-radius: 10px 10px 5px 5px;
 		transform: scaleX(1.7);
 	}
+
 	15% {
 		top: 10%;
-	    height: 10rpx;
-	    border-radius: 50%;
-	    transform: scaleX(1);
+		height: 10px;
+		border-radius: 50%;
+		transform: scaleX(1);
 	}
-	30%{
+
+	30% {
 		top: 40%;
-		height: 10rpx;
+		height: 10px;
 		opacity: 1;
 		border-radius: 50%;
 		transform: scaleX(1);
 		background-color: #fff;
 
 	}
-	31%{
+
+	31% {
 		opacity: 0;
 	}
-	33%{
+
+	33% {
 		top: -30%;
 		opacity: 0;
 	}
+
 	34% {
 		border-radius: 0;
 		background-color: #1C9FFF;
-		box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(28, 159, 255, 0.4);
+		box-shadow: 0px 0px 10px 0px rgba(28, 159, 255, 0.4);
 		opacity: 1;
 		top: -30%;
 	}
+
 	40% {
 		top: 30%;
 		transform-origin: center bottom;
-	    transform: scaleX(0.8) scaleY(1.4);
+		transform: scaleX(0.8) scaleY(1.4);
 	}
+
 	49% {
 		top: 10%;
-	     transform-origin: center bottom;
-	    transform: scaleX(1.3) scaleY(0.7);
+		transform-origin: center bottom;
+		transform: scaleX(1.3) scaleY(0.7);
 	}
-	64%{
+
+	64% {
 		top: 40%;
 		opacity: 1;
 		transform-origin: center top;
-	    transform: scaleX(1) scaleY(1);
+		transform: scaleX(1) scaleY(1);
 	}
-	67%{
+
+	67% {
 		opacity: 0;
 	}
-	100%{
+
+	100% {
 		opacity: 0;
 	}
 }
 
 
-.zwyDrop{
-	width: 10rpx;
-	height: 10rpx;
+.zwyDrop {
+	width: 10px;
+	height: 10px;
 	position: absolute;
 	-webkit-backface-visibility: hidden;
 	-webkit-transform-style: preserve-3d;
@@ -160,16 +323,18 @@
 
 
 
-@keyframes zwyHeightSec{
+@keyframes zwyHeightSec {
 	100% {
-	    background-position: right -40px top 0px;
+		background-position: right -40px top 0px;
 	}
 }
-.zwyHeightSec{
+
+.zwyHeightSec {
 	position: relative;
 	overflow: hidden;
 }
-.zwyHeightSec::before{
+
+.zwyHeightSec::before {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -195,9 +360,9 @@
 .zwyHeight::before {
 	content: '';
 	position: absolute;
-	background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 	width: 140%;
-	height: 80rpx;
+	height: 80px;
 	left: 140%;
 	top: 0;
 	bottom: 0;
@@ -241,7 +406,7 @@
 	margin: auto;
 	height: 100%;
 	width: 51%;
-	background: #fff;
+	background: #ff0004;
 }
 
 .zwyChevron:before {
@@ -296,9 +461,10 @@
 		opacity: 0;
 	}
 }
+
 .zwyHot {
 	position: relative;
-	--color:rgba(0, 0, 0, 0.15);
+	--color: rgba(0, 0, 0, 0.15);
 }
 
 .zwyHot::before {
@@ -327,17 +493,19 @@
 	0% {
 		transform: scale(1);
 	}
+
 	50% {
 		transform: scale(0.9);
 	}
+
 	100% {
 		transform: scale(1);
 	}
 }
 
 .zwyHover1 {
-	--count:infinite;
-	animation: zwyHover1 .3s var(--count) !important;
+	--count: infinite;
+	animation: zwyHover1 .6s var(--count) !important;
 }
 
 .zwyShake {
@@ -405,8 +573,8 @@
 .zwyHover2 {
 	z-index: 999;
 	position: relative;
-	--color:#ff0081;
-	--count:infinite;
+	--color: #ff0081;
+	--count: infinite;
 }
 
 .zwyHover2::before,
@@ -450,7 +618,7 @@
 		background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 	}
 
-	100%{
+	100% {
 		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
 		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
 	}
@@ -467,7 +635,7 @@
 		background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 	}
 
-	100%{
+	100% {
 		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
 		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
 	}
@@ -492,7 +660,7 @@
 }
 
 .zwyHover3 {
-	--count:infinite;
+	--count: infinite;
 	animation: zwyHover3 .3s var(--count) !important;
 }
 
@@ -506,53 +674,53 @@
 	}
 }
 
-.zwyHover4{
-	border-bottom: 6rpx #F6BE3C solid;
-}
-.zwyHover4:hover{
-	margin-top: 6rpx;
-	border-bottom: 0rpx #F6BE3C solid;
-}
-
-.zwyRotate{
+.zwyRotate {
 	animation-name: zwyRotate;
 	animation-duration: 10s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 }
-@keyframes zwyRotate{
+
+@keyframes zwyRotate {
 	0% {
-	    transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
+
 	100% {
-	    transform: rotate(1turn);
+		transform: rotate(1turn);
 	}
+
 	0% {
-	    transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
+
 	100% {
-	    transform: rotate(1turn);
+		transform: rotate(1turn);
 	}
 }
 
-.zwyLive{
+.zwyLive {
 	width: 10%;
 	height: 50%;
 	position: relative;
-	--color:white;
+	--color: white;
 	background-color: var(--color);
 	transform-origin: bottom;
 	animation: zwyLive 0.6s 0.2s infinite ease-in-out;
 }
-.zwyLive::after{
+
+.zwyLive::after {
 	right: 200%;
 	animation: zwyLive 0.6s 0.4s infinite ease-in-out;
 }
-.zwyLive::before{
+
+.zwyLive::before {
 	left: 200%;
 	animation: zwyLive 0.6s 0s infinite ease-in-out;
 }
-.zwyLive::after,.zwyLive::before{
+
+.zwyLive::after,
+.zwyLive::before {
 	width: 100%;
 	height: 100%;
 	content: '';
@@ -561,72 +729,89 @@
 	background-color: var(--color);
 	transform-origin: bottom;
 }
+
 @keyframes zwyLive {
-	0%,100% {
-		transform:scaleY(1);
+
+	0%,
+	100% {
+		transform: scaleY(1);
 	}
+
 	50% {
-	    transform: scaleY(0.6);
+		transform: scaleY(0.6);
 	}
 }
-.zwyMusic{
+
+.zwyMusic {
 	position: relative;
-	--contentBefore:'♫';
-	--contentAfter:'♩';
-	--color:#000000;
-	--zIndex:9999;
+	--contentBefore: '♫';
+	--contentAfter: '♩';
+	--color: #000000;
+	--zIndex: 9999;
 	z-index: var(--zIndex);
 }
-.zwyMusic::after,.zwyMusic::before{
+
+.zwyMusic::after,
+.zwyMusic::before {
 	position: absolute;
 	left: -10%;
 	bottom: -30%;
 	color: var(--color);
 	z-index: calc(var(--zIndex) - 1);
 	opacity: 0;
-	transform:translateY(0) translateX(0) scale(0);
+	transform: translateY(0) translateX(0) scale(0);
 }
-.zwyMusic::after{
+
+.zwyMusic::after {
 	content: var(--contentAfter);
-	animation:zwyMusic 2.5s 1.25s linear infinite ;
+	animation: zwyMusic 2.5s 1.25s linear infinite;
 }
-.zwyMusic::before{
+
+.zwyMusic::before {
 	content: var(--contentBefore);
-	animation:zwyMusic 2.5s linear infinite ;
+	animation: zwyMusic 2.5s linear infinite;
 }
-@keyframes zwyMusic{
-	0%{
+
+@keyframes zwyMusic {
+	0% {
 		transform: translateX(0) translateY(0) scale(0);
 		opacity: 0;
 	}
+
 	5% {
-	    transform:translateY(0) translateX(0) scale(.6);
-	    opacity: 1;
+		transform: translateY(0) translateX(0) scale(.6);
+		opacity: 1;
 	}
+
 	50% {
-	    transform: translateX(-40rpx) translateY(-50rpx) scale(1);
-	    opacity: 1;
+		transform: translateX(-40px) translateY(-50px) scale(1);
+		opacity: 1;
 	}
+
 	90% {
-	    transform: translateX(-50rpx) translateY(-100rpx) scale(1);
-	    opacity: 0;
+		transform: translateX(-50px) translateY(-100px) scale(1);
+		opacity: 0;
 	}
+
 	93% {
-	    transform: translateX(-50rpx) translateY(-100rpx) scale(0);
-	    opacity: 0;
+		transform: translateX(-50px) translateY(-100px) scale(0);
+		opacity: 0;
 	}
-	100%{
+
+	100% {
 		transform: translateX(0) translateY(0) scale(0);
 		opacity: 0;
 	}
 }
 
 
-.zwyPortrait{
+.zwyPortrait {
 	position: relative;
-	--color:#ff0081;
+	--color: #ff0081;
 }
-.zwyPortrait::after,.zwyPortrait::before{
+
+.zwyPortrait::after,
+.zwyPortrait::before {
 	position: absolute;
 	content: '';
 	left: 0;
@@ -635,38 +820,45 @@
 	top: 0;
 	margin: auto;
 	box-sizing: border-box;
-	border: 1rpx solid var(--color);
+	border: 1px solid var(--color);
 	border-radius: 50%;
 	width: 100%;
 	height: 100%;
 }
 
-.zwyPortrait::after{
+.zwyPortrait::after {
 	transform: scale(1.1);
-	animation:zwyPortrait 0.8s linear infinite ;
+	animation: zwyPortrait 0.8s linear infinite;
 }
 
-@keyframes zwyPortrait{
-	0%,100%{
-	    transform: scale(1);
-	    opacity: 0;
+@keyframes zwyPortrait {
+
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0;
 	}
+
 	1% {
-	    transform: scale(1);
+		transform: scale(1);
 		opacity: 1;
 	}
+
 	95% {
-	    transform: scale(1.3);
-	    opacity: 0;
+		transform: scale(1.3);
+		opacity: 0;
 	}
 }
+
 @keyframes zwyBeat {
 	0% {
 		transform: scale(1);
 	}
+
 	50% {
 		transform: scale(0.8);
 	}
+
 	100% {
 		transform: scale(1);
 	}
