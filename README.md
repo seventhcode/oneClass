@@ -4,7 +4,7 @@
 
 在线预览地址:https://zwyboom.gitee.io/zwycss/#/
 
-github地址(您的star是作者创作的动力~):https://github.com/seventhcode/zwyCss
+github地址(您的star是作者创作的动力~):https://github.com/seventhcode/oneClass
 
 ###### 二、使用说明
 
