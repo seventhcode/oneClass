@@ -32,7 +32,7 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
     </head>
     <body>
         <div class="container999">
-        	<div>在App.vue全局引入common文件夹下的zwyCss.css</div>
+        	<div>引入zwyCss.css</div>
         	<div>为你想要效果的div添加class  ||  hover-class(设置--count:1)</div>
         	<div>绿色背景为兼容性较差的动画需酌情使用</div>
         	<div class="card">
