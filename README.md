@@ -2,7 +2,7 @@
 
 ###### 一、地址
 
-在线预览地址:[](https://zwyboom.gitee.io/zwycss)
+在线预览地址:https://zwyboom.gitee.io/zwycss/#/
 
 github地址(您的star是作者创作的动力~):https://github.com/seventhcode/zwyCss
 
