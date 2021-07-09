@@ -2,7 +2,7 @@
 
 ###### 一、地址
 
-在线预览地址:https://zwyboom.gitee.io/zwycss/#/
+在线预览地址:https://zwyboom.gitee.io/zwycss
 
 github地址(您的star是作者创作的动力~):https://github.com/seventhcode/oneClass
 
@@ -12,9 +12,9 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
 
 ###### 三、效果示例
 
-<img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/a08f4930-a6da-11ea-be2a-c777b2fde1a6_0.jpg?v=1625737346" style="zoom:25%;" />
+<img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/a08f4930-a6da-11ea-be2a-c777b2fde1a6_0.jpg?v=1625815060" style="zoom:25%;" />
 
-<img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/a08f4930-a6da-11ea-be2a-c777b2fde1a6_1.jpg?v=1625737351" style="zoom:25%;" />
+<img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/a08f4930-a6da-11ea-be2a-c777b2fde1a6_1.jpg?v=1625815066" style="zoom:25%;" />
 
 
 
@@ -37,6 +37,36 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
         	<div>绿色背景为兼容性较差的动画需酌情使用</div>
         	<div class="card">
         		
+				<div class="cardItem">
+					<div class="tips">流光效果4</div>
+					<div class="blueBtn zwyHeightFour" style="--count:infinite;--heightColor:#fff;--speed:4s;--borderRadius:0;">
+						<img class="zwyStar" src="static/icon_star.png" />
+						流光效果4</div>
+					<div class="className">zwyHeightFour zwyStar</div>
+				</div>
+				
+				<div class="cardItem">
+					<div class="tips">文本点击1</div>
+					<div hover-class="zwyTextClick1">我是文字</div>
+					<div class="className">zwyTextClick1</div>
+				</div>
+				
+				
+				<div class="cardItem">
+					<div class="tips">提示点击效果</div>
+					<div class="btn zwyJittery1" style="--count:infinite;">按钮</div>
+					<div class="className">zwyJittery1</div>
+				</div>
+				
+				
+				<div class="cardItem">
+					<div class="tips">点击效果</div>
+					<div class="btn" hover-class="zwyBtnClick1" style="border-bottom: 10px solid #5500ff;">
+						按钮
+					</div>
+					<div class="className">zwyBtnClick1</div>
+				</div>
+				
         		<div class="cardItem">
         			<div class="tips">按钮动画</div>
         			<div class="btn" style="position: relative;width: 160px;">
@@ -175,12 +205,24 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
         </div>
     </body>
 <style>
+	.redPacket{
+		width: 50px;
+		height: 80px;
+		background-color: red;
+		border-radius: 5px;
+	}
+	.blueBtn{
+		background-color: rgba(9, 1, 56, 0.9);
+		color: #ffc766;
+		padding: 30px;
+	}
 	.grayBtn{
 		background-color: rgba(56, 56, 56, 0.9);
 		color: #FFF;
 		padding: 30px;
 	}
 	.btn{	
+			min-width: 100px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
