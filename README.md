@@ -2,11 +2,9 @@
 
 ###### 一、地址
 
-https://gitee.com/zwyboom/zwyCss/tree/master/
+在线预览地址:[](https://zwyboom.gitee.io/zwycss)
 
-https://ext.dcloud.net.cn/plugin?id=1973
-
-https://github.com/seventhcode/zwyCss
+github地址(您的star是作者创作的动力~):https://github.com/seventhcode/zwyCss
 
 ###### 二、使用说明
 
