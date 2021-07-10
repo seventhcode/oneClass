@@ -1,4 +1,4 @@
-# zwyCss
+# oneClass
 
 ###### 一、地址
 
@@ -8,7 +8,7 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
 
 ###### 二、使用说明
 
-一行class添加动画效果。引入zwyCss.css后添加class 或者 添加div后添加class。oneClass、oneCss、zwyCss
+一行class添加动画效果。引入oneClass.css后添加class 或者 添加div后添加class。oneClass、oneCss、zwyCss
 
 ###### 三、效果示例
 
@@ -28,11 +28,11 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" type="text/css" href="zwyCss.css" />
+        <link rel="stylesheet" type="text/css" href="oneClass.css" />
     </head>
     <body>
         <div class="container999">
-        	<div>引入zwyCss.css</div>
+        	<div>引入oneClass.css</div>
         	<div>为你想要效果的div添加class  ||  hover-class(设置--count:1)</div>
         	<div>绿色背景为兼容性较差的动画需酌情使用</div>
         	<div class="card">
@@ -292,7 +292,7 @@ github地址(您的star是作者创作的动力~):https://github.com/seventhcode
 
 在线预览地址：https://zwyboom.gitee.io/zwycss/#/
 
-github地址:https://github.com/seventhcode/zwyCss
+github地址:https://github.com/seventhcode/oneClass
 
 欢迎star，你们的star是作者创作的动力~~
 
